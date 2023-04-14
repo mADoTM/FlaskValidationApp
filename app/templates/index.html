@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ы титле</title>
+</head>
+<body>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+        <p>
+            {{ form.raw_data.label }}<br>
+            {{ form.raw_data }}
+        </p>
+        <p>
+            {{ form.regular_expression.label }}<br>
+            {{ form.regular_expression }}
+        </p>
+        <p>{{ form.submit() }}</p>
+        {% if matched != null %}
+            {% if matched == True %}
+                <h3 style="color:green">Проверяемая строка соответствует регулярному выражению</h3>
+            {% elif matched == False %}
+                <h3 style="color:red">Проверяемая строка не соответствует регулярному выражению</h3>
+            {% endif %}
+        {% endif %}
+    </form>
+</body>
+</html>
